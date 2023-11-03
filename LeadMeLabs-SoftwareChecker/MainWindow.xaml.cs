@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.IO.Pipes;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,11 +17,13 @@ namespace LeadMeLabs_SoftwareChecker
         public MainWindow()
         {
             InitializeComponent();
+            
             // Hide the process and any windows associated with the application
             Visibility = Visibility.Hidden;
             
-            // Get the directory where the current executable is located
-            string currentDirectory = Directory.GetCurrentDirectory();
+            // Get the directory where the current executable is located - reflection is required for task scheduler
+            string? currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Console.WriteLine("Current directory: " + currentDirectory);
             
             // Track the software and the Launcher program
             bool softwareRunning = false;
@@ -68,7 +71,9 @@ namespace LeadMeLabs_SoftwareChecker
             
             // Navigate one level up by using Path.GetDirectoryName to get to the Launcher's main folder
             string? localDirectory = Path.GetDirectoryName(currentDirectory);
-            string? launcherPath = Path.Join(localDirectory, $"{launcherToCheck}.exe");
+            string launcherPath = Path.Join(localDirectory, $"{launcherToCheck}.exe");
+            
+            Console.WriteLine("Launcher path: " + launcherPath);
             StartProcess(launcherPath);
         }
 
@@ -81,15 +86,23 @@ namespace LeadMeLabs_SoftwareChecker
                 Application.Current.Shutdown();
                 return;
             }
-
+            
             new Task(() =>
             {
                 // Create a new ProcessStartInfo instance with the file path
                 ProcessStartInfo startInfo = new ProcessStartInfo(filePath);
 
                 // Start the process
-                Process.Start(startInfo);
+                Process newProcess = new Process();
+                newProcess.StartInfo = startInfo;
+                startInfo.UseShellExecute = true;
+
+                // Start the new process
+                newProcess.Start();
             }).Start();
+            
+            // Make sure the process has started
+            Task.Delay(4000).Wait();
             
             // Close the checker
             Application.Current.Shutdown();
