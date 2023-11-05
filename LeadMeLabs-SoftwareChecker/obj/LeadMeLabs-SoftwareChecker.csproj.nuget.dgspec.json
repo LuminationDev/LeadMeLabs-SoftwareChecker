@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dkear\\code\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker.csproj": {}
+    "C:\\Users\\ecoad\\Projects\\LeadMeLabs\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dkear\\code\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker.csproj": {
+    "C:\\Users\\ecoad\\Projects\\LeadMeLabs\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dkear\\code\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker.csproj",
+        "projectUniqueName": "C:\\Users\\ecoad\\Projects\\LeadMeLabs\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker.csproj",
         "projectName": "LeadMeLabs-SoftwareChecker",
-        "projectPath": "C:\\Users\\dkear\\code\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker.csproj",
-        "packagesPath": "C:\\Users\\dkear\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dkear\\code\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\obj\\",
+        "projectPath": "C:\\Users\\ecoad\\Projects\\LeadMeLabs\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker.csproj",
+        "packagesPath": "C:\\Users\\ecoad\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ecoad\\Projects\\LeadMeLabs\\LeadMeLabs-SoftwareChecker\\LeadMeLabs-SoftwareChecker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dkear\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ecoad\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,12 +39,6 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "dependencies": {
-            "Grpc.AspNetCore": {
-              "target": "Package",
-              "version": "[2.57.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
